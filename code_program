@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    float pemasukan, tabungan;
+    float makan, transport, healing;
+    float jumlahPengeluaran, sisaUang;
+    
+    printf ("Selamat datang di Program Pengatur pengeluaran dan pemasuakan uang\n");
+    
+    //input pemasukan perbulan dan uang tabungan  yang dimiliki
+    printf ("Berapa jumlah pemasukan bulanan anda: Rp\n");
+    scanf ("%f", &pemasukan);
+    printf ("Masukan jumlah tabungan anda sekarang: Rp\n");
+    scanf("%f", &tabungan);
+    
+    //input pengeluaran untuk makan dan lain lain
+    printf ("Masukan kira kira kebutuhan makan anda\n");
+    scanf("%f", &makan);
+    printf("Masukan biaya transport Rp\n");
+    scanf("%f", &transport);
+    printf("Masukan biaya healing anda\n");
+    scanf("%f", &healing);
+    jumlahPengeluaran = makan + transport + healing;
+    printf ("Jumlah pengeluaran uang setiap bulan: %.2f\n", jumlahPengeluaran);
+    sisaUang = pemasukan - jumlahPengeluaran;
+    printf ("Sisa uang yang bisa anda tabung: %.2f\n",sisaUang);
+    tabungan = tabungan + sisaUang;
+    if (sisaUang < 0) {
+        printf("Peringatan: Tabungan terpakai, uang kamu berkurang");
+        } else {
+            printf ("Selamat tabungan kamu bertambah");
+        }
+    printf("Tabungan anda sekarang: %.2f\n", tabungan);
+
+    return 0;
+}
